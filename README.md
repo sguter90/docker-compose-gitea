@@ -8,10 +8,12 @@ Data will be saved in separate docker volumes to enable easy upgrades!
 
 1. Copy .env.dist to .env and make your modifications
 2. Start docker containers:
-
 ```
 $ docker-compose up -d
 ```
+
+After that open gitea installer via Browser: [http://localhost:3000](http://localhost:3000) and fill the form according your .env settings. Set `gitea-db:3306` in _Host_ field and complete setup.
+
 
 ### Requirements
 
