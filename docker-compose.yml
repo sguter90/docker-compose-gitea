@@ -1,16 +1,16 @@
 version: '2'
 volumes:
-  gitea:
+  app:
   db:
 services:
-  gitea:
-    container_name: gitea
+  app:
+    container_name: gitea-app
     restart: always
     image: gitea/gitea:${GITEA_VERSION}
     links:
       - db:mysql
     volumes:
-      - gitea:/data
+      - ./volumes/gitea_app:/data
     ports:
       - "${GITEA_SSH_PORT}:22"
       - "${GITEA_WEB_PORT}:3000"
@@ -25,7 +25,7 @@ services:
     restart: always
     image: mysql:5.6
     volumes:
-      - db:/var/lib/mysql
+      - ./volumes/gitea_db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
