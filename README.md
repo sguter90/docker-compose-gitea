@@ -25,15 +25,8 @@ After setup is completed register a new user (use link from the navigation bar).
 
 The first registered user has admin privileges.
 
-## Create systemd unit
-1. Copy **docker-gitea.service.dist** to **docker-gitea.service**
-1. Adjust **WorkingDirectory** in service file if needed
-1. Create symbolic link: ``ln -s docker-gitea.service /etc/systemd/system/docker-gitea.service``
-1. Start service: ``systemctl start docker-gitea``
-1. (optional) Enable autostart at boot: ``systemctl enable docker-gitea``
 
-
-### Configuration
+### Environment Configuration
 
 | VARIABLE              | Description                       | DEFAULT       |
 | ----------------------|-----------------------------------|:-------------:|               
@@ -45,3 +38,11 @@ The first registered user has admin privileges.
 |MYSQL_DATABASE         | Database name for gitea           |gitea          |
 |MYSQL_USER             | Database user for gitea           |gitea          |
 |MYSQL_PASSWORD         | Password for MySQL user           |gitea          |
+
+
+## Create systemd unit
+1. Copy **docker-gitea.service.dist** to **docker-gitea.service**
+1. Adjust **WorkingDirectory** in service file if needed
+1. Create symbolic link: ``ln -s docker-gitea.service /etc/systemd/system/docker-gitea.service``
+1. Start service: ``systemctl start docker-gitea``
+1. (optional) Enable autostart at boot: ``systemctl enable docker-gitea``
