@@ -12,7 +12,13 @@ Data will be saved in separate docker volumes to enable easy upgrades!
 $ docker-compose up -d
 ```
 
-After that open gitea installer via Browser: [http://localhost:3000](http://localhost:3000) and fill the form according your .env settings. Set `gitea-db:3306` in _Host_ field and complete setup.
+After that open gitea installer via Browser: [http://localhost:3000](http://localhost:3000) and fill the form according your .env settings. 
+
+Set `gitea-db:3306` in _Host_ field and complete setup.
+
+After setup is complete register a new user (use link from the navigation bar).
+
+The first registered user has admin privileges.
 
 
 ### Requirements
