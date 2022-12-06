@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  myfirstworkflow:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+workflows:
+  kickoff:
+    jobs:
+      - myfirstworkflow
